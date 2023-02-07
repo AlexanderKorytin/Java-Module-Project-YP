@@ -19,7 +19,7 @@ public class Main
             else{print("Введите наименование товара:");}
         }
         print("Число гостей — " + numberPeople);
-        print("Добавленные товары:\n" + nameList + "  " + "\n На общую сумму: " + priceProd + "\n по " + priceProd/numberPeople + " с каждого");
+        print("Добавленные товары:\n" + nameList + "  " + "\n На общую сумму:  " + priceProd + "\n по " + priceProd/numberPeople + " с каждого");
     }
 
     public static int waitInt (int numPeopleMin, int numPeopleMax)
