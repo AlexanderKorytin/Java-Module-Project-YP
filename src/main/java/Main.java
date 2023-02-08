@@ -4,9 +4,9 @@ public class Main
     public static void main(String[] args) {
         print("Введие количество человек оплачивающих счет:");
         int numberPeople = waitInt(1, 100);
-        String nameList = "";
-        float priceProd = 0.0f;
-        MenuBar list = new MenuBar();
+        String nameList, message;
+        float priceProd;
+        MenuBar list = new MenuBar("",0.0f);
         Scanner scan = new Scanner(System.in);
         print("Введите наименование товара:");
         while (true)
@@ -19,7 +19,8 @@ public class Main
             else{print("Введите наименование товара:");}
         }
         print("Число гостей — " + numberPeople);
-        print("Добавленные товары:\n" + nameList + "  " + "\n На общую сумму:  " + priceProd + "\n по " + priceProd/numberPeople + " с каждого");
+        message = "Длбавленные товары:\n %s. \nНаобщую сумму: %.2f.\n по %.2f %s с каждого";
+        print(String.format(message, nameList, priceProd, priceProd/numberPeople, "рубля"));
     }
 
     public static int waitInt (int numPeopleMin, int numPeopleMax)
@@ -52,11 +53,17 @@ public class Main
     {
         System.out.println(massege);
     }
-
+    // объявляем новый класс - строка меню(прайса)
     public static class MenuBar
     {
-    float priceDish = 0;
-    String nameDish = "";
+    float priceDish;
+    String nameDish;
+
+    public MenuBar(String nameDish, float priceDish)
+    {
+        this.nameDish = nameDish;
+        this.priceDish = priceDish;
+    }
 
     public String writeMenu()
      {
