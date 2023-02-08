@@ -32,8 +32,8 @@ public class Main
         resultRub = priceProd/numberPeople;
         rub = list.printResult(resultRub); // определяем окончание слова "рубль"
         // в зависимости от полученной суммы товаров
-        message = "Добавленные товары: %s \nНаобщую сумму: %.2f\n%.2f %s с каждого!";
-        print(String.format(message, nameList, priceProd, resultRub, rub));
+        message = "Добавленные товары: %s \nНаобщую сумму: %.2f\n%.2f %s с каждого из %d!";
+        print(String.format(message, nameList, priceProd, resultRub, rub, numberPeople));
 
     }
 // далее метод запрашивающий целочисленное значение >numPeopleMin и <numPeopleMax
