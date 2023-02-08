@@ -32,7 +32,7 @@ public class Main
         resultRub = priceProd/numberPeople;
         rub = list.printResult(resultRub); // определяем окончание слова "рубль"
         // в зависимости от полученной суммы товаров
-        message = "Добавленные товары:\n %s. \nНаобщую сумму: %.2f.\n%.2f %s с каждого";
+        message = "Добавленные товары: %s \nНаобщую сумму: %.2f\n%.2f %s с каждого!";
         print(String.format(message, nameList, priceProd, resultRub, rub));
 
     }
@@ -41,10 +41,10 @@ public class Main
     public static int waitInt (int numPeopleMin, int numPeopleMax)
     {
         int numberPeople;
-        String message = "Введите целое число > %d и < %d";
-        Scanner scanner = new Scanner(System.in);
+        String message = "Введите целое число > %d и < %d:";
         while (true)
         {
+            Scanner scanner = new Scanner(System.in);
             if (scanner.hasNextInt())
             {
                 numberPeople = scanner.nextInt();
@@ -57,9 +57,9 @@ public class Main
                     print(String.format(message, numPeopleMin, numPeopleMax));
                 }
             }
-            if (!scanner.hasNextInt()) {
+            else
+            {
                 print(String.format(message, numPeopleMin, numPeopleMax));
-                scanner.nextLine();
             }
         }
     }
