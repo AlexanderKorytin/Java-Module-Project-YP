@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 public class Main
 {
@@ -16,7 +17,7 @@ public class Main
         {
             nameList = list.writeMenu(); // заполняем строку наименованиями
             // введенных пользователем товаров
-            print("Введите сумму товара в виде 00,00:");
+            print("Введите цену товара в виде 00.00:");
             priceProd = list.priceSum(); // запрашиваем цену товара и прибавляем ее к
             // сумме ранее введенных цен
 
@@ -32,6 +33,7 @@ public class Main
         resultRub = priceProd/numberPeople;
         rub = list.printResult(resultRub); // определяем окончание слова "рубль"
         // в зависимости от полученной суммы товаров
+        Locale.setDefault(Locale.US);
         message = "Добавленные товары: %s \nНаобщую сумму: %.2f\n%.2f %s с каждого из %d!";
         print(String.format(message, nameList, priceProd, resultRub, rub, numberPeople));
 

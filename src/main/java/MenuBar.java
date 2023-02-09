@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 public class MenuBar
 {
@@ -51,19 +52,27 @@ public class MenuBar
         // сумме ранее введенных цен
         public float priceSum()
         {
-            Scanner scan = new Scanner(System.in);
             while (true)
             {
-                if (scan.hasNextDouble())
+                Scanner scan = new Scanner(System.in);
+                scan.useLocale(Locale.US);
+                if (scan.hasNextFloat())
                 {
-                    priceDish = priceDish + scan.nextFloat();
-                    System.out.println("Товар успешно добавлен.\nДобавить еще товар? - введите любой символ!\n\nЧтобы завершить введите \"Завершить\"");
-                    return priceDish;
+                    float priceNew = scan.nextFloat();
+                    if (priceNew>0)
+                    {
+                        priceDish = priceDish + priceNew;
+                        System.out.println("Товар успешно добавлен.\nДобавить еще товар? - введите любой символ!\n\nЧтобы завершить введите \"Завершить\"");
+                        return priceDish;
+                    }
+                    else
+                    {
+                        System.out.println("Введите цену товара в виде 00.00");
+                    }
                 }
                 else
                 {
-                    System.out.println("Введите сумму товара в виде 00,00");
-                    scan.nextLine();
+                    System.out.println("Введите цену товара в виде 00.00");
                 }
             }
         }
