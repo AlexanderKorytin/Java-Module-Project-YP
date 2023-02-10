@@ -14,7 +14,7 @@ public class MenuBar
         // в зависимости от полученной суммы товаров
         public String printResult(float result)
         {
-            String rubl = "Рублей";
+            String rubl = "рублей";
             if(result%100<=11&&result%100>=19)
             {
                 rubl = "рублей";
@@ -62,17 +62,21 @@ public class MenuBar
                     if (priceNew>0)
                     {
                         priceDish = priceDish + priceNew;
-                        System.out.println("Товар успешно добавлен.\nДобавить еще товар? - введите любой символ!\n\nЧтобы завершить введите \"Завершить\"");
+                        System.out.println("Товар успешно добавлен.\nДобавить еще товар? - введите любой символ:\n\nЧтобы завершить введите: \"Завершить\"");
                         return priceDish;
+                    }
+                    else if (priceNew==0)
+                    {
+                        System.out.println("Бесплатного ничего нет!\nВведите цену товара больше нуля:");
                     }
                     else
                     {
-                        System.out.println("Введите цену товара в виде 00.00");
+                        System.out.println("Введите цену товара больше нуля:");
                     }
                 }
                 else
                 {
-                    System.out.println("Введите цену товара в виде 00.00");
+                    System.out.println("Ошибка ввода!\nВведите цену товара в формате 00.00:");
                 }
             }
         }

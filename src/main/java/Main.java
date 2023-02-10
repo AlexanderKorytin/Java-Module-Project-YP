@@ -17,7 +17,7 @@ public class Main
         {
             nameList = list.writeMenu(); // заполняем строку наименованиями
             // введенных пользователем товаров
-            print("Введите цену товара в виде 00.00:");
+            print("Введите цену товара в формате 00.00:");
             priceProd = list.priceSum(); // запрашиваем цену товара и прибавляем ее к
             // сумме ранее введенных цен
 
@@ -34,7 +34,7 @@ public class Main
         rub = list.printResult(resultRub); // определяем окончание слова "рубль"
         // в зависимости от полученной суммы товаров
         Locale.setDefault(Locale.US);
-        message = "Добавленные товары: %s \nНаобщую сумму: %.2f\n%.2f %s с каждого из %d!";
+        message = "\n\n\nДобавленные товары: %s \nНаобщую сумму: %.2f\n%.2f %s с каждого из %d человек.";
         print(String.format(message, nameList, priceProd, resultRub, rub, numberPeople));
 
     }
@@ -43,7 +43,7 @@ public class Main
     public static int waitInt (int numPeopleMin, int numPeopleMax)
     {
         int numberPeople;
-        String message = "Введите целое число > %d и < %d:";
+        String message = "Введите целое число больше %d и меньше %d:";
         while (true)
         {
             Scanner scanner = new Scanner(System.in);
