@@ -12,9 +12,9 @@ public class MenuBar
         }
         // далее метод определяющий окончание слова "рубль"
         // в зависимости от полученной суммы товаров
-        public String printResult(double result)
+        public String printResult(float result)
         {
-            int num = (int)Math.floor(result);
+            int num = (int)Math.round(result);
             if( ((num%100) >=11 ) && ((num%100) <= 19) )
             {
                 return "рублей";
