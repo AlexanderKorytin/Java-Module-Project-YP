@@ -31,7 +31,7 @@ public class Main
         // в зависимости от полученной суммы товаров
         Locale.setDefault(Locale.US);
         message = "\n\n\nДобавленные товары: %s \nНаобщую сумму: %.2f\n%.2f %s с каждого из %d человек.";
-        print(String.format(message, nameList, priceProd, resultRub, rub, numberPeople));
+        print(String.format(message, nameList, priceProd, Math.floor(resultRub*100)/100, rub, numberPeople));
 
     }
 // далее метод запрашивающий целочисленное значение >numPeopleMin и <numPeopleMax
