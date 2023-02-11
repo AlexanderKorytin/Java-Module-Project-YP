@@ -12,33 +12,24 @@ public class MenuBar
         }
         // далее метод определяющий окончание слова "рубль"
         // в зависимости от полученной суммы товаров
-        public String printResult(float result)
+        public String printResult(double result)
         {
-            String rubl = "рублей";
-            if(result%100<=11&&result%100>=19)
+            int num = (int)Math.floor(result);
+            if( ((num%100) >=11 ) && ((num%100) <= 19) )
             {
-                rubl = "рублей";
+                return "рублей";
             }
-            switch(((int)result)%10)
+            switch(num%10)
             {
-                case 0:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                    rubl = "рублей";
-                    break;
                 case 1:
-                    rubl = "рубль";
-                    break;
+                    return "рубль";
                 case 2:
                 case 3:
                 case 4:
-                    rubl = "рубля";
-                    break;
+                    return "рубля";
+                default:
+                    return "рублей";
             }
-            return rubl;
         }
         //далее метод заполняющий строку наименованиями
         // введенных пользователем товаров
