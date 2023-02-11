@@ -14,7 +14,7 @@ public class MenuBar
         // в зависимости от полученной суммы товаров
         public String printResult(float result)
         {
-            int num = (int)Math.round(result);
+            int num = (int)Math.floor(result);
             if( ((num%100) >=11 ) && ((num%100) <= 19) )
             {
                 return "рублей";

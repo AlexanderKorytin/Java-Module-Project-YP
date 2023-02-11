@@ -13,21 +13,17 @@ public class Main
         Scanner scan = new Scanner(System.in);
         print("Введите наименование товара:");
         // далее производим вычисление и выводим результат
-        while (true)
-        {
+        while (true) {
             nameList = list.writeMenu(); // заполняем строку наименованиями
             // введенных пользователем товаров
             print("Введите цену товара в формате 00.00:");
             priceProd = list.priceSum(); // запрашиваем цену товара и прибавляем ее к
             // сумме ранее введенных цен
 
-            if(scan.nextLine().equalsIgnoreCase("Завершить"))
-            {
-              break;
-            }
-            else
-            {
-              print("Введите наименование товара:");
+            if (scan.nextLine().equalsIgnoreCase("Завершить")) {
+                break;
+            } else {
+                print("Введите наименование товара:");
             }
         }
         resultRub = priceProd/numberPeople;
